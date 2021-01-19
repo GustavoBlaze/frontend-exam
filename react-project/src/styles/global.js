@@ -24,5 +24,6 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased !important;
+    font-family: 'Roboto Condensed', sans-serif;
   }
 `;
