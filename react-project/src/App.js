@@ -1,8 +1,15 @@
+import React from 'react';
+
+import AppProvider from './context';
+import Routes from './routes';
+import GlobalStyle from './styles/global';
+
 function App() {
   return (
-    <div className="App">
-      <p>o inicio de tudo!</p>
-    </div>
+    <AppProvider>
+      <Routes />
+      <GlobalStyle />
+    </AppProvider>
   );
 }
 
