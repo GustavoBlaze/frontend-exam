@@ -6,4 +6,5 @@ export default {
     loadingBackground: '#1D1A1A',
     loadingIconEmpty: '#4C4C4C',
   },
+  backgroundBrightness: 'brightness(300%)',
 };

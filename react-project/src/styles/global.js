@@ -33,8 +33,8 @@ export default createGlobalStyle`
     font-size: 62.5%;
   }
 
-  body {
-    -webkit-font-smoothing: antialiased !important;
+  body, button {
     font-family: 'Roboto Condensed', sans-serif;
+    -webkit-font-smoothing: antialiased !important;
   }
 `;
