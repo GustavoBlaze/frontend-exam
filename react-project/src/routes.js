@@ -1,13 +1,23 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
-import Loading from './pages/Loading';
 import Login from './pages/Login';
+// import Loading from './components/Loading';
+
+// const longLazyImportPage = (pageName) =>
+//   React.lazy(() =>
+//     Promise.all([
+//       import(`./pages/${pageName}`),
+//       new Promise((resolve) => setTimeout(resolve, 3000)),
+//     ]).then(([module]) => module),
+//   );
+
+// const Login = longLazyImportPage('Login');
 
 const Routes = () => (
   <Switch>
-    <Route path="/" exact component={Loading} />
-    <Route path="/login" component={Login} />
+    {/* <React.Suspense fallback={<Loading />}> */}
+    <Route path="/" exact component={Login} />
+    {/* </React.Suspense> */}
   </Switch>
 );
 
