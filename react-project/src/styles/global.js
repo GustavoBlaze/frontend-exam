@@ -14,8 +14,19 @@ export default createGlobalStyle`
   html,
   body,
   #root {
-    min-height: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
+  }
+
+  #root {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100vw;
+
+    * {
+      transition: all .35s ease;
+    }
   }
 
   html {

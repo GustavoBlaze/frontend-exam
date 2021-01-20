@@ -1,11 +1,11 @@
 import React from 'react';
-
+import { ReactComponent as Loader } from '../../assets/loader.svg';
 import { Container } from './styles';
 
 function Loading() {
   return (
     <Container>
-      <p>loading page</p>
+      <Loader />
     </Container>
   );
 }
