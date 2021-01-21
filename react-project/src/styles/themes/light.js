@@ -6,6 +6,8 @@ export default {
     loadingBackground: '#1D1A1A',
     loadingIconEmpty: '#4C4C4C',
     text: '#1D1A1A',
+    overlayBackground: 'rgba(255,255,255,0.9);',
+    modalBackground: '#000000',
   },
   backgroundBrightness: 'brightness(300%)',
   contentBackground:
