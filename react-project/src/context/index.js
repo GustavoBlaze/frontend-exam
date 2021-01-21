@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { AuthProvider } from '../hooks/useAuth';
 import usePersistedTheme from '../hooks/usePersistedTheme';
 import { dark, light } from '../styles/themes';
 
@@ -16,7 +17,11 @@ const AppProvider = ({ children }) => {
   ]);
 
   const providers = useMemo(
-    () => [<ThemeProvider theme={currentTheme} />, <BrowserRouter />],
+    () => [
+      <AuthProvider />,
+      <ThemeProvider theme={currentTheme} />,
+      <BrowserRouter />,
+    ],
     [currentTheme],
   );
 
