@@ -1,10 +1,14 @@
 import React, { useState, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { Container, Logo, Option } from './styles';
+import { useAuth } from '../../hooks/useAuth';
+import Logout from './Logout';
+import { Container, Logo, Option, Overlay } from './styles';
 
 function Sidebar() {
   const location = useLocation();
+  const [mustShowOverlay, setMustShowOverlay] = useState(false);
+  const { doLogout } = useAuth();
 
   const [options, setOptions] = useState(
     [
@@ -26,27 +30,37 @@ function Sidebar() {
   );
 
   const handleOptionClick = useCallback(({ title }) => {
-    setOptions((oldOptions) =>
-      oldOptions.map((option) => ({
-        ...option,
-        selected: option.title === title,
-      })),
-    );
+    if (title === 'logout') {
+      setMustShowOverlay(true);
+    } else
+      setOptions((oldOptions) =>
+        oldOptions.map((option) => ({
+          ...option,
+          selected: option.title === title,
+        })),
+      );
   }, []);
 
+  const handleOverlayClose = useCallback(() => setMustShowOverlay(false), []);
+
   return (
-    <Container>
-      <Logo />
-      {options.map(({ title, selected }, index) => (
-        <Option
-          key={index.toString()}
-          selected={selected || undefined}
-          onClick={() => handleOptionClick({ title })}
-        >
-          {title}
-        </Option>
-      ))}
-    </Container>
+    <>
+      <Container>
+        <Logo />
+        {options.map(({ title, selected }, index) => (
+          <Option
+            key={index.toString()}
+            selected={selected || undefined}
+            onClick={() => handleOptionClick({ title })}
+          >
+            {title}
+          </Option>
+        ))}
+      </Container>
+      <Overlay show={mustShowOverlay}>
+        <Logout onAccept={doLogout} onDecline={handleOverlayClose} />
+      </Overlay>
+    </>
   );
 }
 

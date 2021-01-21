@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import LogoWithTheme from '../LogoWithTheme';
 import Button from '../Button';
+import DefaultOverlay from '../DefaultOverlay';
 
 export const Container = styled.div`
   display: flex;
@@ -41,5 +42,15 @@ export const Option = styled(Button)`
       &:hover {
         color: ${({ theme }) => theme.colors.primary};
       }
+    `}
+`;
+
+export const Overlay = styled(DefaultOverlay)`
+  ${(props) =>
+    !props.show &&
+    css`
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
     `}
 `;
