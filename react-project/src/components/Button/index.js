@@ -8,6 +8,7 @@ const Button = styled.button`
   padding: 1.1rem 2.7rem;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.primary};
+  text-transform: uppercase;
   cursor: pointer;
 
   &:hover {
