@@ -22,7 +22,7 @@ function Login() {
     async (event) => {
       event.preventDefault();
       setLoading(true);
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 300));
       doLogin({ email, password });
       setLoading(false);
     },
