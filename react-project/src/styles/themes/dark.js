@@ -8,4 +8,6 @@ export default {
     text: '#ffffff',
   },
   backgroundBrightness: 'brightness(30%)',
+  contentBackground:
+    'linear-gradient(133deg, rgba(0,0,0,0.6885204529494382) 47%, rgba(255,255,255,0.056497981039325795) 88%)',
 };
