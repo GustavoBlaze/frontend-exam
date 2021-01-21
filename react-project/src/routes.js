@@ -1,6 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+
+import Route from './components/Route';
 import Login from './pages/Login';
+import Trailers from './pages/Trailers';
+
 // import Loading from './components/Loading';
 
 // const longLazyImportPage = (pageName) =>
@@ -17,6 +21,7 @@ const Routes = () => (
   <Switch>
     {/* <React.Suspense fallback={<Loading />}> */}
     <Route path="/" exact component={Login} />
+    <Route path="/trailers" component={Trailers} isPrivate />
     {/* </React.Suspense> */}
   </Switch>
 );
