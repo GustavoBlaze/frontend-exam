@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route as ReactDOMRoute, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import Layout from '../Layout';
 import { useAuth } from '../../hooks/useAuth';
 
 const Route = ({ isPrivate = false, component: Component, ...rest }) => {
@@ -12,7 +12,7 @@ const Route = ({ isPrivate = false, component: Component, ...rest }) => {
       {...rest}
       render={({ location }) =>
         isPrivate === !!authenticated ? (
-          <Component />
+          <>{authenticated ? <Layout content={Component} /> : <Component />}</>
         ) : (
           <Redirect
             to={{
