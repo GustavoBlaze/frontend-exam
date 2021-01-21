@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { lighten } from 'polished';
+
 import PageContainer from '../../components/PageContainer';
 import LogoWithTheme from '../../components/LogoWithTheme';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 export const Container = styled(PageContainer)`
   display: flex;
@@ -16,17 +18,22 @@ export const Logo = styled(LogoWithTheme)`
   margin-bottom: 51px;
 `;
 
-export const Button = styled.button`
-  background: transparent;
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-  padding: 1.1rem 2.7rem;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.primary};
-  cursor: pointer;
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 275px;
+  align-items: stretch;
+`;
 
-  &:hover {
-    border-color: ${({ theme }) => lighten('0.2', theme.colors.primary)};
-    color: ${({ theme }) => lighten('0.2', theme.colors.primary)};
-  }
+export const EmailInput = styled(Input)`
+  margin-bottom: 2.4rem;
+`;
+
+export const PasswordInput = styled(Input)`
+  margin-bottom: 5.1rem;
+`;
+
+export const SubmitButton = styled(Button)`
+  align-self: center;
 `;
