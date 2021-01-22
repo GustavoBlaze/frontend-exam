@@ -1,8 +1,17 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import LogoWithTheme from '../LogoWithTheme';
 import Button from '../Button';
 import DefaultOverlay from '../DefaultOverlay';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -21,11 +30,14 @@ export const Logo = styled(LogoWithTheme)`
   width: 70%;
   max-width: 274px;
   margin-bottom: 40px;
+  animation: ${fadeIn} 1.5s ease backwards;
 `;
 
 export const Option = styled(Button)`
   width: 65%;
   max-width: 254px;
+  animation: ${fadeIn} 2s ease backwards;
+  animation-delay: 0.5s;
 
   &:not(:first-of-type) {
     margin-top: 1.6rem;
