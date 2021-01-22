@@ -12,7 +12,7 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(
-    () => !!localStorage.getItem('@Witcher:authenticated'),
+    () => localStorage.getItem('@Witcher:authenticated') === 'true',
   );
 
   useEffect(() => {
